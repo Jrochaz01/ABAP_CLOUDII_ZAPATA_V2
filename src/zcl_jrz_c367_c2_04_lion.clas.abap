@@ -1,0 +1,20 @@
+CLASS zcl_jrz_c367_c2_04_lion DEFINITION
+  PUBLIC
+  INHERITING FROM zcl_jrz_c367_c2_03_animal
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS: walk REDEFINITION.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_jrz_c367_c2_04_lion IMPLEMENTATION.
+  METHOD walk.
+    rv_walk = 'The lion walks.'.
+  ENDMETHOD.
+
+ENDCLASS.

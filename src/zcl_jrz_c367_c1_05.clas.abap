@@ -7,7 +7,8 @@ CLASS zcl_jrz_c367_c1_05 DEFINITION INHERITING FROM zcl_jrz_c367_c1_04
     DATA: attr TYPE string.
     METHODS:
       constructor,
-      set_arch.
+      set_arch,
+      get_arch REDEFINITION.        " En REDEFINITION No se pueden agregar parámetros
   PROTECTED SECTION.
   PRIVATE SECTION.
 
@@ -26,7 +27,11 @@ CLASS zcl_jrz_c367_c1_05 IMPLEMENTATION.
 
     super->constructor( ).
 
-    attr = 'valor'.    " No genera error.
+    me->architecture = 'child_architecture'." No genera error.
+  ENDMETHOD.
+
+  METHOD get_arch.
+    rv_arch = super->get_arch( ).
   ENDMETHOD.
 
 ENDCLASS.
