@@ -3,7 +3,8 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Master ABAP II Cloud - Grupo Zapata - B</CTEXT>
+    <CTEXT>Master ABAP II Cloud - Grupo Zapata</CTEXT>
+    <SRV_CHECK>X</SRV_CHECK>
    </DEVC>
   </asx:values>
  </asx:abap>
