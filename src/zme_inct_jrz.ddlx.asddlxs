@@ -1,0 +1,116 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: { typeName: 'Travel1',
+                     typeNamePlural: 'Travel2',
+                     title:{ type: #STANDARD,
+                             value: 'IncidentId' }
+                     },
+       presentationVariant: [{ sortOrder: [{ by: 'incidentid',
+                                             direction: #DESC }],
+                               visualizations: [{ type: #AS_LINEITEM }] }]
+      }
+annotate entity ZINCT_C_JRZ with
+{
+  @UI.facet: [{ id: 'IncidentMasterData',
+                purpose: #STANDARD,
+                type: #IDENTIFICATION_REFERENCE,
+                label: 'Incident Master Data',
+                position: 10 }]
+  @UI.hidden: true
+  incuuid;
+
+
+  @UI: { lineItem: [{ position: 10,
+                   importance: #HIGH,
+                   label: 'Incident ID' },
+                 { type: #FOR_ACTION,
+                   dataAction: 'acceptIncident',
+                   label: 'Accept Incident',
+                   position: 10 },
+                 { type: #FOR_ACTION,
+                   dataAction: 'rejectIncident',
+                   label: 'Reject Incident',
+                   position: 20 },
+                 { type: #FOR_ACTION,
+                   dataAction: 'deductIncident',
+                   label: 'Discount Incident',
+                   position: 30 }
+                 ],
+
+         selectionField: [{ position: 10 }],
+         identification: [{ position: 10 },
+
+                         { type: #FOR_ACTION,
+                           dataAction: 'acceptIncident',
+                           label: 'Accept Incident',
+                           position: 10 },
+                         { type: #FOR_ACTION,
+                           dataAction: 'rejectIncident',
+                           label: 'Reject Incident',
+                           position: 20 },
+                         { type: #FOR_ACTION,
+                           dataAction: 'deductIncident',
+                           label: 'Discount Incident',
+                           position: 30 }
+                         ]
+                          }
+
+  incidentid;
+
+  @UI: { lineItem: [{ position: 20,
+                      importance: #HIGH }],
+         selectionField: [{ position: 20 }],
+         identification: [{  position: 20 }]
+  }
+  title;
+
+  @UI: { lineItem: [{ position: 30,
+                      importance: #LOW }],
+         identification: [{  position: 30 }]
+  }
+  description;
+
+  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
+  //                                                element: ''},
+  //                                       useForValidation: true }]
+  @UI: { lineItem: [{ position: 40,
+                      importance: #LOW }],
+         textArrangement: #TEXT_ONLY,
+         identification: [{  position: 40 }]
+  }
+  status;
+
+  @UI.hidden: true
+  StatusDescription;
+
+  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
+  //                                                element: ''},
+  //                                       useForValidation: true }]
+  @UI: { lineItem: [{ position: 50,
+                      importance: #LOW }],
+         identification: [{  position: 50 }]
+  }
+  priority;
+
+  @UI.hidden: true
+  PriorityDescription;
+
+  @UI: { lineItem: [{ position: 60,
+                      importance: #LOW }],
+         identification: [{  position: 60 }]
+  }
+  creationdate;
+
+  @UI: { lineItem: [{ position: 70,
+                      importance: #LOW }],
+         identification: [{  position: 70 }]
+  }
+  changedate;
+
+  @UI.hidden: true
+  locallastchangedat;
+
+  @UI.hidden: true
+  lastchangedat;
+
+
+}

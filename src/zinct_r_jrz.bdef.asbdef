@@ -1,0 +1,79 @@
+managed implementation in class zbp_inct_r_jrz unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZINCT_R_JRZ alias Incident
+persistent table zdt_inct_jrz
+draft table zdt_d_inct_jrz
+lock master
+total etag lastchangedat
+etag master locallastchangedat
+authorization master ( instance )
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) IncUuid;
+  field ( readonly ) incidentid,
+
+  creationdate,
+  changedate,
+  localcreatedby,
+  localcreatedat,
+  locallastchangedby;
+
+  //  field( features : instance) status;
+  field ( mandatory ) title, description, status, priority;
+
+  action ( features : instance, authorization : update ) acceptIncident result [1] $self;
+  action ( features : instance, authorization : update ) rejectIncident result [1] $self;
+  action ( features : instance, authorization : update ) deductIncident
+    parameter ZINCT_AE_JRZ result [1] $self;
+
+  internal action change_status_priority;
+  validation validate_status on save { create; field status; }
+  validation validate_priority on save { create; field priority; }
+
+  determination setIncNumber on save { create; }
+  determination setCreationDate on save { create; }
+  determination setChangeDate on modify { create; }
+
+  determine action validate_StatusId { validation validate_status; }
+  determine action validate_PriorityId { validation validate_priority; }
+
+  side effects
+  {
+    determine action validate_StatusId executed on field status affects messages;
+    determine action validate_PriorityId executed on field priority affects messages;
+  }
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+
+  draft determine action Prepare
+  {
+    validation validate_status;
+    validation validate_priority;
+  }
+
+  mapping for zdt_inct_jrz
+    {
+      incuuid            = inc_uuid;
+      incidentid         = incident_id;
+      title              = title;
+      description        = description;
+      status             = status;
+      priority           = priority;
+      creationdate       = creation_date;
+      changedate         = change_date;
+      localcreatedby     = local_created_by;
+      localcreatedat     = local_created_at;
+      locallastchangedby = local_last_changed_by;
+      locallastchangedat = local_last_changed_at;
+      lastchangedat      = last_changed_at;
+    }
+
+
+}

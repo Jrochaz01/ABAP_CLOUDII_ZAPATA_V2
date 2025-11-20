@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for Incidentes'
+define service ZSD_INCT_JRZ {
+  expose ZINCT_C_JRZ as Incident;
+}

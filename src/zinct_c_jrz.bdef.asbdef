@@ -1,0 +1,22 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZINCT_C_JRZ alias Incident
+{
+  use create;
+  use update;
+  use delete;
+
+  use action acceptIncident;
+  use action rejectIncident;
+  use action deductIncident;
+  use action validate_StatusId;
+  use action validate_PriorityId;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+}
