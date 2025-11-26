@@ -9,32 +9,41 @@ define root view entity ZINCT_C_JRZ
   provider contract transactional_query
   as projection on ZINCT_R_JRZ
 {
-  key incuuid,
-      incidentid,
-      @Search.defaultSearchElement: true
-      @Search.fuzzinessThreshold: 0.8
-      @Search.ranking: #MEDIUM
-      title,
-      description,
+  key IncUuid,
+      //      @Search.defaultSearchElement: true
+      //      @Search.fuzzinessThreshold: 0.8
+      //      @Search.ranking: #MEDIUM
+      IncidentId,
+      //      @Search.defaultSearchElement: true
+      //      @Search.fuzzinessThreshold: 0.8
+      //      @Search.ranking: #MEDIUM
+      Title,
+      //      @Search.defaultSearchElement: true
+      //      @Search.fuzzinessThreshold: 0.8
+      //      @Search.ranking: #MEDIUM
+      Description,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #MEDIUM
       @ObjectModel.text.element: [ 'StatusDescription' ]
-      status,
+      Status,
       _Status.status_description     as StatusDescription,
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.8
       @Search.ranking: #MEDIUM
       @ObjectModel.text.element: [ 'PriorityDescription' ]
-      priority,
+      Priority,
       _Priority.priority_description as PriorityDescription,
-      creationdate,
-      changedate,
+      //      @Search.defaultSearchElement: true
+      //      @Search.fuzzinessThreshold: 0.8
+      //      @Search.ranking: #MEDIUM
+      Creationdate,
+      Changedate,
 
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
-      locallastchangedat,
+      LocalLastChangedAt,
       @Semantics.systemDateTime.lastChangedAt: true
-      lastchangedat,
+      LastChangedAt,
 
       /* Associations */
       _Priority,

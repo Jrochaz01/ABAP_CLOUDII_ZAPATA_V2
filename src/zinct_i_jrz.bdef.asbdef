@@ -9,7 +9,7 @@ define behavior for ZINCT_I_JRZ alias Incident
 
   use action acceptIncident;
   use action rejectIncident;
-  use action deductIncident;
+  use action changeStatus;
   use action validate_StatusId;
   use action validate_PriorityId;
 

@@ -10,11 +10,11 @@ CLASS lhc_Incident DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS acceptIncident FOR MODIFY
       IMPORTING keys FOR ACTION Incident~acceptIncident RESULT result.
 
+    METHODS changeStatus FOR MODIFY
+      IMPORTING keys FOR ACTION Incident~changeStatus RESULT result.
+
     METHODS change_status_priority FOR MODIFY
       IMPORTING keys FOR ACTION Incident~change_status_priority.
-
-    METHODS deductIncident FOR MODIFY
-      IMPORTING keys FOR ACTION Incident~deductIncident RESULT result.
 
     METHODS rejectIncident FOR MODIFY
       IMPORTING keys FOR ACTION Incident~rejectIncident RESULT result.
@@ -28,11 +28,11 @@ CLASS lhc_Incident DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS setIncNumber FOR DETERMINE ON SAVE
       IMPORTING keys FOR Incident~setIncNumber.
 
-    METHODS validate_priority FOR VALIDATE ON SAVE
-      IMPORTING keys FOR Incident~validate_priority.
+    METHODS validate_Priority FOR VALIDATE ON SAVE
+      IMPORTING keys FOR Incident~validate_Priority.
 
-    METHODS validate_status FOR VALIDATE ON SAVE
-      IMPORTING keys FOR Incident~validate_status.
+    METHODS validate_Status FOR VALIDATE ON SAVE
+      IMPORTING keys FOR Incident~validate_Status.
 
 ENDCLASS.
 
@@ -47,10 +47,10 @@ CLASS lhc_Incident IMPLEMENTATION.
   METHOD acceptIncident.
   ENDMETHOD.
 
-  METHOD change_status_priority.
+  METHOD changeStatus.
   ENDMETHOD.
 
-  METHOD deductIncident.
+  METHOD change_status_priority.
   ENDMETHOD.
 
   METHOD rejectIncident.
@@ -65,10 +65,10 @@ CLASS lhc_Incident IMPLEMENTATION.
   METHOD setIncNumber.
   ENDMETHOD.
 
-  METHOD validate_priority.
+  METHOD validate_Priority.
   ENDMETHOD.
 
-  METHOD validate_status.
+  METHOD validate_Status.
   ENDMETHOD.
 
 ENDCLASS.

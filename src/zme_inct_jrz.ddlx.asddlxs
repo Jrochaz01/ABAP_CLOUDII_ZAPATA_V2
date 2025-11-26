@@ -6,111 +6,281 @@
                      },
        presentationVariant: [{ sortOrder: [{ by: 'incidentid',
                                              direction: #DESC }],
-                               visualizations: [{ type: #AS_LINEITEM }] }]
+                               visualizations: [{ type: #AS_LINEITEM }]
+                             }]
       }
 annotate entity ZINCT_C_JRZ with
 {
+
+
   @UI.facet: [{ id: 'IncidentMasterData',
                 purpose: #STANDARD,
                 type: #IDENTIFICATION_REFERENCE,
                 label: 'Incident Master Data',
                 position: 10 }]
   @UI.hidden: true
-  incuuid;
+  IncUuid;
+
+
 
 
   @UI: { lineItem: [{ position: 10,
-                   importance: #HIGH,
-                   label: 'Incident ID' },
-                 { type: #FOR_ACTION,
-                   dataAction: 'acceptIncident',
-                   label: 'Accept Incident',
-                   position: 10 },
-                 { type: #FOR_ACTION,
-                   dataAction: 'rejectIncident',
-                   label: 'Reject Incident',
-                   position: 20 },
-                 { type: #FOR_ACTION,
-                   dataAction: 'deductIncident',
-                   label: 'Discount Incident',
-                   position: 30 }
-                 ],
+                    importance: #HIGH,
+                    label: 'Incident ID' },
+                    { type: #FOR_ACTION,
+                      dataAction: 'acceptIncident',
+                      label: 'Accept Incident',
+                      position: 10 },
+                    { type: #FOR_ACTION,
+                      dataAction: 'rejectIncident',
+                      label: 'Reject Incident',
+                      position: 20 },
+                  { type: #FOR_ACTION,
+                    dataAction: 'changeStatus',
+                    label: 'Change Status',
+                    position: 30 }
+                  ]
+                  ,
 
-         selectionField: [{ position: 10 }],
-         identification: [{ position: 10 },
+          selectionField: [{ position: 10 }],
+          identification: [{ position: 10 },
 
-                         { type: #FOR_ACTION,
-                           dataAction: 'acceptIncident',
-                           label: 'Accept Incident',
-                           position: 10 },
-                         { type: #FOR_ACTION,
-                           dataAction: 'rejectIncident',
-                           label: 'Reject Incident',
-                           position: 20 },
-                         { type: #FOR_ACTION,
-                           dataAction: 'deductIncident',
-                           label: 'Discount Incident',
-                           position: 30 }
-                         ]
-                          }
+                            { type: #FOR_ACTION,
+                              dataAction: 'acceptIncident',
+                              label: 'Accept Incident',
+                              position: 10 },
+                            { type: #FOR_ACTION,
+                              dataAction: 'rejectIncident',
+                              label: 'Reject Incident',
+                              position: 20 },
+                          { type: #FOR_ACTION,
+                            dataAction: 'changeStatus',
+                            label: 'Change Status',
+                            position: 30 }
+                          ]
+                           }
 
-  incidentid;
+  IncidentId;
+
 
   @UI: { lineItem: [{ position: 20,
-                      importance: #HIGH }],
+                      importance: #LOW,
+                      label: 'Titulo' }],
          selectionField: [{ position: 20 }],
-         identification: [{  position: 20 }]
+         identification: [{ position: 20 }]
   }
-  title;
+  Title;
 
   @UI: { lineItem: [{ position: 30,
-                      importance: #LOW }],
-         identification: [{  position: 30 }]
+                    importance: #LOW,
+                    label: 'Descripción' }],
+       selectionField: [{ position: 30 }],
+       identification: [{ position: 30 }]
   }
-  description;
+  Description;
 
-  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
-  //                                                element: ''},
-  //                                       useForValidation: true }]
+
   @UI: { lineItem: [{ position: 40,
-                      importance: #LOW }],
-         textArrangement: #TEXT_ONLY,
-         identification: [{  position: 40 }]
+                  importance: #LOW,
+                  label: 'Estatus' }],
+     selectionField: [{ position: 40 }],
+     identification: [{ position: 40 }]
   }
-  status;
+  Status;
 
-  @UI.hidden: true
-  StatusDescription;
 
-  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
-  //                                                element: ''},
-  //                                       useForValidation: true }]
   @UI: { lineItem: [{ position: 50,
-                      importance: #LOW }],
-         identification: [{  position: 50 }]
+                importance: #LOW,
+                label: 'Prioridad' }],
+   selectionField: [{ position: 50 }],
+   identification: [{ position: 50 }]
   }
-  priority;
-
-  @UI.hidden: true
-  PriorityDescription;
+  Priority;
 
   @UI: { lineItem: [{ position: 60,
-                      importance: #LOW }],
-         identification: [{  position: 60 }]
+              importance: #LOW,
+              label: 'Creado el.' }],
+  selectionField: [{ position: 60 }],
+  identification: [{ position: 60 }]
   }
-  creationdate;
+  Creationdate;
 
   @UI: { lineItem: [{ position: 70,
-                      importance: #LOW }],
-         identification: [{  position: 70 }]
+            importance: #LOW,
+            label: 'Modificado el.' }],
+  selectionField: [{ position: 70 }],
+  identification: [{ position: 70 }]
   }
-  changedate;
+  Changedate;
+
+
 
   @UI.hidden: true
-  locallastchangedat;
+  LocalLastChangedAt;
 
   @UI.hidden: true
-  lastchangedat;
+  LastChangedAt;
 
 
 }
+
+//  @UI: { lineItem: [{ position: 10,
+//                      importance: #HIGH,
+//                      label: 'Id.Incidente' },
+//                    { type: #FOR_ACTION,
+//                      dataAction: 'changeStatus',
+//                      label: 'Cambio Estatus',
+//                      position: 10 }],
+//         selectionField: [{ position: 10 }],
+//         identification: [{ position: 10 },
+//                          { type: #FOR_ACTION,
+//                              dataAction: 'changeStatus',
+//                              label: 'Cambio Estatus',
+//                              position: 10 }
+//                         ] }
+
+
+
+
+
+//  @UI: { lineItem: [{ position: 20,
+//                   importance: #HIGH,
+//                   label: 'Incident ID' },
+//  //                 { type: #FOR_ACTION,
+//  //                   dataAction: 'acceptIncident',
+//  //                   label: 'Accept Incident',
+//  //                   position: 10 },
+//  //                 { type: #FOR_ACTION,
+//  //                   dataAction: 'rejectIncident',
+//  //                   label: 'Reject Incident',
+//  //                   position: 20 },
+//                 { type: #FOR_ACTION,
+//                   dataAction: 'changeStatus',
+//                   label: 'Change Status',
+//                   position: 20 }
+//                 ]
+//                 ,
+//
+//         selectionField: [{ position: 20 }],
+//         identification: [{ position: 20 },
+//
+//  //                         { type: #FOR_ACTION,
+//  //                           dataAction: 'acceptIncident',
+//  //                           label: 'Accept Incident',
+//  //                           position: 10 },
+//  //                         { type: #FOR_ACTION,
+//  //                           dataAction: 'rejectIncident',
+//  //                           label: 'Reject Incident',
+//  //                           position: 20 },
+//                         { type: #FOR_ACTION,
+//                           dataAction: 'changeStatus',
+//                           label: 'Change Statust',
+//                           position: 20 }
+//                         ]
+//                          }
+//
+//  incidentid;
+
+
+
+
+
+
+
+
+//  @UI: { lineItem: [{ position: 30,
+//                      importance: #LOW,
+//                      label: 'Incidente Description' }],
+//         selectionField: [{ position: 20 }],
+//         identification: [{ position: 30 }]
+//  }
+//  description;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  @UI: { lineItem: [{ position: 20,
+//                      importance: #HIGH,
+//                      label: 'Titulo'}],
+//         selectionField: [{ position: 20}],
+//         identification: [{  position: 20 }]
+//  }
+//  title;
+
+
+
+
+
+
+
+//  @UI: { lineItem: [{ position: 30,
+//                      importance: #LOW,
+//                      label: 'Incident Description' }],
+//         selectionField: [{ position: 20 }],
+//         identification: [{ position: 30 }]
+//  }
+//  description;
+//
+//  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
+//  //                                                element: ''},
+//  //                                       useForValidation: true }]
+//  @UI: { lineItem: [{ position: 40,
+//                      importance: #LOW }],
+//         selectionField: [{ position: 30 }],
+//         textArrangement: #TEXT_ONLY,
+//         identification: [{  position: 40 }]
+//  }
+//  status;
+//
+//  @UI.hidden: true
+//  StatusDescription;
+//
+//  //  @Consumption.valueHelpDefinition: [{ entity:{ name: '',
+//  //                                                element: ''},
+//  //                                       useForValidation: true }]
+//  @UI: { lineItem: [{ position: 50,
+//                      importance: #LOW }],
+//         selectionField: [{ position: 40 }],
+//         identification: [{  position: 50 }]
+//  }
+//  priority;
+//
+//  @UI.hidden: true
+//  PriorityDescription;
+//
+//  @UI: { lineItem: [{ position: 60,
+//                      importance: #LOW }],
+//         selectionField: [{ position: 50 }],
+//         identification: [{  position: 60 }]
+//  }
+//  creationdate;
+//
+//  @UI: { lineItem: [{ position: 70,
+//                      importance: #LOW }],
+//         identification: [{  position: 70 }]
+//  }
+//  changedate;
+//
+//  @UI.hidden: true
+//  locallastchangedat;
+//
+//  @UI.hidden: true
+//  lastchangedat;

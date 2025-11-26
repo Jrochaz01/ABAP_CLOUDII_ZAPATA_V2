@@ -5,22 +5,22 @@ define root view entity ZINCT_I_JRZ
   provider contract transactional_interface
   as projection on ZINCT_R_JRZ
 {
-  key incuuid,
-      incidentid,
-      title,
-      description,
-      status,
-      priority,
-      creationdate,
-      changedate,
-      localcreatedby,
-      localcreatedat,
-      locallastchangedby,
+  key IncUuid,
+      IncidentId,
+      Title,
+      Description,
+      Status,
+      Priority,
+      Creationdate,
+      Changedate,
+      LocalCreatedBy,
+      LocalCreatedAt,
+      LocalLastChangedBy,
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
-      locallastchangedat,
+      LocalLastChangedAt,
       @Semantics.systemDateTime.lastChangedAt: true
-      lastchangedat,
+      LastChangedAt,
       /* Associations */
-      _Priority,
-      _Status
+      _Status,
+      _Priority      
 }

@@ -6,45 +6,45 @@ define behavior for ZINCT_R_JRZ alias Incident
 persistent table zdt_inct_jrz
 draft table zdt_d_inct_jrz
 lock master
-total etag lastchangedat
-etag master locallastchangedat
+total etag LastChangedAt
+etag master LocalLastChangedAt
 authorization master ( instance )
 {
   create;
   update;
   delete;
   field ( numbering : managed, readonly ) IncUuid;
-  field ( readonly ) incidentid,
+  field ( readonly ) IncidentId,
 
-  creationdate,
-  changedate,
-  localcreatedby,
-  localcreatedat,
-  locallastchangedby;
+  Creationdate,
+  Changedate,
+  LocalCreatedBy,
+  LocalCreatedAt,
+  LocalLastChangedBy;
 
   //  field( features : instance) status;
-  field ( mandatory ) title, description, status, priority;
+  field ( mandatory ) Title, Description, Status, Priority;
 
   action ( features : instance, authorization : update ) acceptIncident result [1] $self;
   action ( features : instance, authorization : update ) rejectIncident result [1] $self;
-  action ( features : instance, authorization : update ) deductIncident
+  action ( features : instance, authorization : update ) changeStatus
     parameter ZINCT_AE_JRZ result [1] $self;
 
   internal action change_status_priority;
-  validation validate_status on save { create; field status; }
-  validation validate_priority on save { create; field priority; }
+  validation validate_Status on save { create; field Status; }
+  validation validate_Priority on save { create; field Priority; }
 
   determination setIncNumber on save { create; }
   determination setCreationDate on save { create; }
   determination setChangeDate on modify { create; }
 
-  determine action validate_StatusId { validation validate_status; }
-  determine action validate_PriorityId { validation validate_priority; }
+  determine action validate_StatusId { validation validate_Status; }
+  determine action validate_PriorityId { validation validate_Priority; }
 
   side effects
   {
-    determine action validate_StatusId executed on field status affects messages;
-    determine action validate_PriorityId executed on field priority affects messages;
+    determine action validate_StatusId executed on field Status affects messages;
+    determine action validate_PriorityId executed on field Priority affects messages;
   }
 
   draft action Resume;
@@ -54,25 +54,25 @@ authorization master ( instance )
 
   draft determine action Prepare
   {
-    validation validate_status;
-    validation validate_priority;
+    validation validate_Status;
+    validation validate_Priority;
   }
 
   mapping for zdt_inct_jrz
     {
-      incuuid            = inc_uuid;
-      incidentid         = incident_id;
-      title              = title;
-      description        = description;
-      status             = status;
-      priority           = priority;
-      creationdate       = creation_date;
-      changedate         = change_date;
-      localcreatedby     = local_created_by;
-      localcreatedat     = local_created_at;
-      locallastchangedby = local_last_changed_by;
-      locallastchangedat = local_last_changed_at;
-      lastchangedat      = last_changed_at;
+      IncUuid            = inc_uuid;
+      IncidentId         = incident_id;
+      Title              = title;
+      Description        = description;
+      Status             = status;
+      Priority           = priority;
+      Creationdate       = creation_date;
+      Changedate         = change_date;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
     }
 
 

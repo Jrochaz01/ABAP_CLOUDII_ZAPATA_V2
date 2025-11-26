@@ -3,29 +3,29 @@
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity ZINCT_R_JRZ
   as select from zdt_inct_jrz
-  association [0..1] to zdt_stat_jrz     as _Status   on $projection.status = _Status.status_code
-  association [0..1] to zdt_priority_jrz as _Priority on $projection.priority = _Priority.priority_code
+  association [0..1] to zdt_stat_jrz     as _Status   on $projection.Status = _Status.status_code
+  association [0..1] to zdt_priority_jrz as _Priority on $projection.Priority = _Priority.priority_code
 {
-  key inc_uuid              as incuuid,
-      incident_id           as incidentid,
-      title                 as title,
-      description           as description,
-      status                as status,
-      priority              as priority,
-      creation_date         as creationdate,
-      change_date           as changedate,
+  key inc_uuid              as IncUuid,
+      incident_id           as IncidentId,
+      title                 as Title,
+      description           as Description,
+      status                as Status,
+      priority              as Priority,
+      creation_date         as Creationdate,
+      change_date           as Changedate,
       @Semantics.user.createdBy: true
-      local_created_by      as localcreatedby,
+      local_created_by      as LocalCreatedBy,
       @Semantics.systemDateTime.createdAt: true
-      local_created_at      as localcreatedat,
+      local_created_at      as LocalCreatedAt,
       @Semantics.user.localInstanceLastChangedBy: true
-      local_last_changed_by as locallastchangedby,
+      local_last_changed_by as LocalLastChangedBy,
       //Local ETag
       @Semantics.systemDateTime.localInstanceLastChangedAt: true
-      local_last_changed_at as locallastchangedat,
+      local_last_changed_at as LocalLastChangedAt,
       //Total ETag
       @Semantics.systemDateTime.lastChangedAt: true
-      last_changed_at       as lastchangedat,
+      last_changed_at       as LastChangedAt,
       _Status,
       _Priority
 }
