@@ -1,5 +1,5 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Incidentes Root Entity'
+@EndUserText.label: 'Incidentes Root Entity' 
 @Metadata.ignorePropagatedAnnotations: true
 define root view entity ZINCT_R_JRZ
   as select from zdt_inct_jrz

@@ -6,7 +6,7 @@
 
 
 define root view entity ZINCT_C_JRZ
-  provider contract transactional_query
+  provider contract transactional_query 
   as projection on ZINCT_R_JRZ
 {
   key IncUuid,

@@ -7,7 +7,7 @@ define root view entity ZINCT_I_JRZ
 {
   key IncUuid,
       IncidentId,
-      Title,
+      Title, 
       Description,
       Status,
       Priority,
