@@ -1,4 +1,13 @@
-@EndUserText.label: 'Service definition for Incidentes'
-define service ZSD_INCT_JRZ {
-  expose ZINCT_C_JRZ as Incident;
+@EndUserText: {
+  label: 'Service Definition Incidents'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_DT_INCT_JRZ'
+  }
+}
+define service zsd_inct_jrz
+  provider contracts odata_v4_ui {
+  expose zc_dt_inct_jrz   as Incidents;
+  expose zc_dt_inct_h_jrz as History;
 }

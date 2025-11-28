@@ -1,0 +1,160 @@
+managed implementation in class zbp_r_dt_inct_jrz unique;
+strict ( 2 );
+with draft;
+
+define behavior for zr_dt_inct_jrz alias Incident
+persistent table zdt_inct_jrz
+draft table zdt_d_inct_jrz
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global, instance )
+
+{
+  create;
+  update;
+  delete;
+
+  association _History { create ( features : instance ); with draft; }
+
+  field ( readonly )
+  IncUuid,
+  IncidentID,
+  Status,
+  ChangeDate,
+  LocalCreatedBy,
+  LocalCreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  IncUuid;
+
+  field ( mandatory )
+  Title,
+  Description,
+  Priority;
+
+
+  action ( features : instance, authorization : update ) acceptIncident result [1] $self;
+  action ( features : instance, authorization : update ) rejectIncident result [1] $self;
+  action ( features : instance, authorization : update ) changeStatus
+    parameter ZINCT_AE_JRZ result [1] $self;
+
+  internal action setHistory;
+
+  // jrz:.....
+  validation validateDates on save { create; field CreationDate, ChangeDate; }
+  validation validateTitle on save { create; field Title; }
+  validation validateDescription on save { create; field Description; }
+  validation validatePriority on save { create; field Priority; }
+  validation validateStatus on save { create; field Status; }
+  // jrz:.....
+
+  determination setDefaultHistory on save { create; }
+  determination setDefaultValues on modify { create; }
+
+  // jrz:.....
+  determine action validateDatesDet { validation validateDates; }
+  determine action validateTitleDet { validation validateTitle; }
+  determine action validateDescriptionDet { validation validateDescription; }
+  determine action validatePriorityDet { validation validatePriority; }
+  determine action validateStatusDet { validation validateStatus; }
+  // jrz:.....
+
+  side effects
+  {
+    action changeStatus affects $self;
+    // jrz:.....
+    determine action validateDatesDet executed on field CreationDate, field ChangeDate affects messages;
+    determine action validateTitleDet executed on field Title affects messages;
+    determine action validateDescriptionDet executed on field Description affects messages;
+    determine action validatePriorityDet executed on field Priority affects messages;
+    determine action validateStatusDet executed on field Status affects messages;
+    // jrz:.....
+  }
+
+
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+
+  // jrz:.....
+  //  draft determine action Prepare;
+  // jrz:.....
+
+  // jrz:.....
+  draft determine action Prepare
+  {
+    validation validateDates;
+    validation validateTitle;
+    validation validateDescription;
+    validation validatePriority;
+    validation validateStatus;
+  }
+  // jrz:.....
+
+
+
+  mapping for zdt_inct_jrz
+    {
+      IncUuid            = inc_uuid;
+      IncidentId         = incident_id;
+      Title              = title;
+      Description        = description;
+      Status             = status;
+      Priority           = priority;
+      CreationDate       = creation_date;
+      ChangeDate         = change_date;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}
+
+
+
+define behavior for zdd_inct_h_jrz alias History
+implementation in class zbp_dd_inct_h_jrz unique
+persistent table zdt_inct_h_jrz
+draft table zdt_d_inct_h_jrz
+lock dependent by _Incident
+authorization dependent by _Incident
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Incident { with draft; }
+
+  field ( numbering : managed )
+  HisUuid;
+
+  field ( readonly )
+  HisUuid,
+  IncUuid,
+  LocalCreatedBy,
+  LocalCreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  mapping for zdt_inct_h_jrz
+    {
+      HisUuid            = his_uuid;
+      IncUuid            = inc_uuid;
+      HisId              = his_id;
+      PreviousStatus     = previous_status;
+      NewStatus          = new_status;
+      Text               = text;
+      LocalCreatedBy     = local_created_by;
+      LocalCreatedAt     = local_created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Class message</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>CustomerID  &amp;1 is unknown.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Agency &amp;1 is unknown.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Begin Date &amp;1 must not be after End Date &amp;2 .</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Begin Date &amp;1 must be on or after system date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Status &amp;1 is not valid.  Pending (PE) can´t change to CO or CL Status</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Invalid discount: Enter a number between 1 an 100.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Enter a BeginDate.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Enter an EndDate.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Enter an Agency ID.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Enter a Customer ID.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Enter a ConnectionID.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>No Flight &amp;1 for FlightDate &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Product ID is unknown.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Enter a ProductID.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Booking status not valid for BookingID &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Enter an AirlineID.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Enter a FlightDate.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Not enough keys for all instances.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Number range object almost depleted.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>You are not authorized to perform this activity.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>You are not authorized to perform this activity.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>Please enter a currency code.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Currency code &amp;1 does not exist.  Please enter a valid currency code.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Booking Fee is not valid.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Flight Price is not valid.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Supplement Price is not valid.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>901</MSGNR>
+     <TEXT>Fecha Creación es obligatoria</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>902</MSGNR>
+     <TEXT>No se permite registrar Incidentes con Fecha futura. &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>903</MSGNR>
+     <TEXT>Fecha Creación &amp;1 es menor  que fecha de modificación &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>904</MSGNR>
+     <TEXT>Título obligatorio</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>905</MSGNR>
+     <TEXT>Descripción Obligatoria</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>906</MSGNR>
+     <TEXT>Prioridad Obligatoria</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>907</MSGNR>
+     <TEXT>No se permite registrar Incidentes con Fecha en el pasado. &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>908</MSGNR>
+     <TEXT>Imposible cambiar a estatus &amp;1 cuando se encuentra en estatus &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMC_INCT_MESSAGE_JRZ</ARBGB>
+     <MSGNR>909</MSGNR>
+     <TEXT>Solo el usuario Administrador puede hacer cambio de estatus. (&amp;1)</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
